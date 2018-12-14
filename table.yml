@@ -18,15 +18,11 @@ Resources:
     Properties:
       TableName: surveyResponses
       AttributeDefinitions:
-        - AttributeName: survey_unique_id
-          AttributeType: S
-        - AttributeName: question_text
+        - AttributeName: survey_unique_id_question_text
           AttributeType: S
       KeySchema:
 # TODO: consider different keyType options?
-        - AttributeName: survey_unique_id
-          KeyType: HASH 
-        - AttributeName: question_text
+        - AttributeName: survey_unique_id_question_text
           KeyType: HASH 
       ProvisionedThroughput:
         ReadCapacityUnits: 1
