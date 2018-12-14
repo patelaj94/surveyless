@@ -1,0 +1,61 @@
+service: serverless-rest-api-with-dynamodb
+
+provider: 
+  name: aws
+  region: us-east-1
+
+functions:
+  CreateSurveyFunction:
+    handler: CreateSurveyFunction/lambda_function.lambda_handler
+    runtime: python3.6
+    description: ''
+    memorySize: 512
+    timeout: 15
+   ## CodeUri: .debug/
+    events:
+      - http: 
+          path: /createSurvey
+          method: POST
+          cors: true
+
+resources:
+  Resources:
+    surveyQuestions:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: surveyQuestionsInfo
+        AttributeDefinitions:
+          - AttributeName: survey_code_id
+            AttributeType: S
+        KeySchema:
+  # TODO: consider different keyType options?
+          - AttributeName: survey_code_id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    surveyResponses:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: surveyResponses
+        AttributeDefinitions:
+          - AttributeName: survey_code_id
+            AttributeType: S
+        KeySchema:
+  # TODO: consider different keyType options?
+          - AttributeName: survey_code_id
+            KeyType: HASH 
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    # CreateSurveyFunctionPermission:
+    #   Type: 'AWS::Lambda::Permission'
+    #   Properties:
+    #     Action: 'lambda:InvokeFunction'
+    #     FunctionName:
+    #       'Fn::GetAtt':
+    #         - CreateSurveyFunction
+    #         - Arn
+    #     Principal: apigateway.amazonaws.com
+    #     SourceArn:
+    #       'Fn::Sub': 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:*/*/*/*'
