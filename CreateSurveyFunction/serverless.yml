@@ -25,11 +25,11 @@ resources:
       Properties:
         TableName: surveyQuestionsInfo
         AttributeDefinitions:
-          - AttributeName: survey_code_id
+          - AttributeName: survey_unique_id
             AttributeType: S
         KeySchema:
   # TODO: consider different keyType options?
-          - AttributeName: survey_code_id
+          - AttributeName: survey_unique_id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
@@ -39,11 +39,25 @@ resources:
       Properties:
         TableName: surveyResponses
         AttributeDefinitions:
-          - AttributeName: survey_code_id
+          - AttributeName: survey_unique_id_question_text
             AttributeType: S
         KeySchema:
   # TODO: consider different keyType options?
-          - AttributeName: survey_code_id
+          - AttributeName: survey_unique_id_question_text
+            KeyType: HASH 
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    codeToSurvey:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: codeToSurvey
+        AttributeDefinitions:
+          - AttributeName: survey_code
+            AttributeType: S
+        KeySchema:
+  # TODO: consider different keyType options?
+          - AttributeName: survey_code
             KeyType: HASH 
         ProvisionedThroughput:
           ReadCapacityUnits: 1

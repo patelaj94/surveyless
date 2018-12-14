@@ -105,7 +105,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1544815512870-2018-12-14T19:25:12.870Z/serverless-rest-api-with-dynamodb.zip"
+                "S3Key": "serverless/serverless-rest-api-with-dynamodb/dev/1544822017837-2018-12-14T21:13:37.837Z/serverless-rest-api-with-dynamodb.zip"
               },
               "FunctionName": "serverless-rest-api-with-dynamodb-dev-CreateSurveyFunction",
               "Handler": "CreateSurveyFunction/lambda_function.lambda_handler",
@@ -124,14 +124,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateSurveyFunctionLambdaVersionVvxShDwik33M9Z9bEipuTuKXv4Wx3BZGXF2KlsxbA": {
+          "CreateSurveyFunctionLambdaVersionleiz6mRAyULBc4ruAQPcZliYJrwtjmK4XfBmJHQs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateSurveyFunctionLambdaFunction"
               },
-              "CodeSha256": "3E930WQHEiR0rWcgKaphyvzNX+54A1ZCVczzPz1KqCc="
+              "CodeSha256": "ajJoxhbil/A6980OoPMPRYKnqCwqsmoDS9Vu++vm/I8="
             }
           },
           "ApiGatewayRestApi": {
@@ -250,7 +250,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1544815512878": {
+          "ApiGatewayDeployment1544822017847": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -316,13 +316,13 @@
               "TableName": "surveyQuestionsInfo",
               "AttributeDefinitions": [
                 {
-                  "AttributeName": "survey_code_id",
+                  "AttributeName": "survey_unique_id",
                   "AttributeType": "S"
                 }
               ],
               "KeySchema": [
                 {
-                  "AttributeName": "survey_code_id",
+                  "AttributeName": "survey_unique_id",
                   "KeyType": "HASH"
                 }
               ],
@@ -338,13 +338,35 @@
               "TableName": "surveyResponses",
               "AttributeDefinitions": [
                 {
-                  "AttributeName": "survey_code_id",
+                  "AttributeName": "survey_unique_id_question_text",
                   "AttributeType": "S"
                 }
               ],
               "KeySchema": [
                 {
-                  "AttributeName": "survey_code_id",
+                  "AttributeName": "survey_unique_id_question_text",
+                  "KeyType": "HASH"
+                }
+              ],
+              "ProvisionedThroughput": {
+                "ReadCapacityUnits": 1,
+                "WriteCapacityUnits": 1
+              }
+            }
+          },
+          "codeToSurvey": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+              "TableName": "codeToSurvey",
+              "AttributeDefinitions": [
+                {
+                  "AttributeName": "survey_code",
+                  "AttributeType": "S"
+                }
+              ],
+              "KeySchema": [
+                {
+                  "AttributeName": "survey_code",
                   "KeyType": "HASH"
                 }
               ],
@@ -364,7 +386,7 @@
           "CreateSurveyFunctionLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateSurveyFunctionLambdaVersionVvxShDwik33M9Z9bEipuTuKXv4Wx3BZGXF2KlsxbA"
+              "Ref": "CreateSurveyFunctionLambdaVersionleiz6mRAyULBc4ruAQPcZliYJrwtjmK4XfBmJHQs"
             }
           },
           "ServiceEndpoint": {
@@ -456,13 +478,13 @@
             "TableName": "surveyQuestionsInfo",
             "AttributeDefinitions": [
               {
-                "AttributeName": "survey_code_id",
+                "AttributeName": "survey_unique_id",
                 "AttributeType": "S"
               }
             ],
             "KeySchema": [
               {
-                "AttributeName": "survey_code_id",
+                "AttributeName": "survey_unique_id",
                 "KeyType": "HASH"
               }
             ],
@@ -478,13 +500,35 @@
             "TableName": "surveyResponses",
             "AttributeDefinitions": [
               {
-                "AttributeName": "survey_code_id",
+                "AttributeName": "survey_unique_id_question_text",
                 "AttributeType": "S"
               }
             ],
             "KeySchema": [
               {
-                "AttributeName": "survey_code_id",
+                "AttributeName": "survey_unique_id_question_text",
+                "KeyType": "HASH"
+              }
+            ],
+            "ProvisionedThroughput": {
+              "ReadCapacityUnits": 1,
+              "WriteCapacityUnits": 1
+            }
+          }
+        },
+        "codeToSurvey": {
+          "Type": "AWS::DynamoDB::Table",
+          "Properties": {
+            "TableName": "codeToSurvey",
+            "AttributeDefinitions": [
+              {
+                "AttributeName": "survey_code",
+                "AttributeType": "S"
+              }
+            ],
+            "KeySchema": [
+              {
+                "AttributeName": "survey_code",
                 "KeyType": "HASH"
               }
             ],
@@ -500,7 +544,7 @@
     "artifact": "/Users/arjunpatel/SharedFolder/LearningProgramming/Cloud/Serverless/ServerlessFramewok/surveyless/CreateSurveyFunction/.serverless/serverless-rest-api-with-dynamodb.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-rest-api-with-dynamodb/dev/1544815512870-2018-12-14T19:25:12.870Z",
+    "artifactDirectoryName": "serverless/serverless-rest-api-with-dynamodb/dev/1544822017837-2018-12-14T21:13:37.837Z",
     "artifact": "serverless-rest-api-with-dynamodb.zip"
   }
 }
