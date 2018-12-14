@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 // import {Router} from 'react-dom'
-import {ControlLabel, FormControl, FormGroup, Button, Form, Col, ButtonGroup} from 'react-bootstrap'
+import {ControlLabel, FormControl, FormGroup, Button, Form, Col} from 'react-bootstrap'
 
 class App extends Component {
   constructor(props, context) {
@@ -61,6 +61,20 @@ class App extends Component {
                                 type="text"
                                 value={this.state.response}
                                 placeholder="Maybe You"
+                                onChange={this.handleChange}
+                              />
+                          </Col>
+                      </FormGroup>
+
+           <FormGroup  controlId="formHorizontalEmail">
+                           <Col componentClass={ControlLabel} xs={2} sm={2} md={2}>
+                                Question Text
+                              </Col>
+                           <Col xs={8} sm={10} md={8}>
+                              <FormControl
+                                type="text"
+                                value={this.state.response}
+                                placeholder="Did you enjoy the event?"
                                 onChange={this.handleChange}
                               />
                           </Col>
