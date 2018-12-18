@@ -35,6 +35,37 @@ functions:
           path: survey
           method: post
           cors: true
+  list:
+    handler: CreateSurvey/list.list
+    events:
+      - http:
+          path: survey
+          method: get
+          cors: true
+
+  get:
+    handler: CreateSurvey/get.get
+    events:
+      - http:
+          path: survey/{id}
+          method: get
+          cors: true
+
+  update:
+    handler: CreateSurvey/update.update
+    events:
+      - http:
+          path: survey/{id}
+          method: put
+          cors: true
+
+  delete:
+    handler: CreateSurvey/delete.delete
+    events:
+      - http:
+          path: survey/{id}
+          method: delete
+          cors: true
 
 resources:
   Resources:
