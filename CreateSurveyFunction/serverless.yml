@@ -1,21 +1,39 @@
-service: serverless-rest-api-with-dynamodb
+service: surveyless
 
 provider: 
   name: aws
+  runtime: python3.6
   region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:*:*"
 
 functions:
-  CreateSurveyFunction:
-    handler: CreateSurveyFunction/lambda_function.lambda_handler
-    runtime: python3.6
-    description: ''
-    memorySize: 512
-    timeout: 15
+  # CreateSurveyFunction:
+  #   handler: CreateSurveyFunction/lambda_function.lambda_handler
+  #   runtime: python3.6
+  #   description: ''
+  #   memorySize: 512
+  #   timeout: 15
    ## CodeUri: .debug/
+    # events:
+    #   - http: 
+    #       path: /createSurvey
+    #       method: POST
+    #       cors: true
+  create:
+    handler: CreateSurvey/create.create
     events:
-      - http: 
-          path: /createSurvey
-          method: POST
+      - http:
+          path: survey
+          method: post
           cors: true
 
 resources:
