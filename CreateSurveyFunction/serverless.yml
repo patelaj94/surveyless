@@ -28,14 +28,14 @@ functions:
     #       path: /createSurvey
     #       method: POST
     #       cors: true
-  create:
+  createsurvey:
     handler: CreateSurvey/create.create
     events:
       - http:
           path: survey
           method: post
           cors: true
-  list:
+  listsurvey:
     handler: CreateSurvey/list.list
     events:
       - http:
@@ -43,7 +43,7 @@ functions:
           method: get
           cors: true
 
-  get:
+  getsurvey:
     handler: CreateSurvey/get.get
     events:
       - http:
@@ -51,7 +51,7 @@ functions:
           method: get
           cors: true
 
-  update:
+  updatesurvey:
     handler: CreateSurvey/update.update
     events:
       - http:
@@ -59,11 +59,49 @@ functions:
           method: put
           cors: true
 
-  delete:
+  deletesurvey:
     handler: CreateSurvey/delete.delete
     events:
       - http:
           path: survey/{id}
+          method: delete
+          cors: true
+  createCode:
+    handler: CreateSurveyCode/create.create
+    events:
+      - http:
+          path: surveycode
+          method: post
+          cors: true
+  listCode:
+    handler: CreateSurveyCode/list.list
+    events:
+      - http:
+          path: surveycode
+          method: get
+          cors: true
+
+  getCode:
+    handler: CreateSurveyCode/get.get
+    events:
+      - http:
+          path: surveycode/{id}
+          method: get
+          cors: true
+
+  updateCode:
+    handler: CreateSurveyCode/update.update
+    events:
+      - http:
+          path: surveycode/{id}
+          method: put
+          cors: true
+
+  deleteCode:
+    handler: CreateSurveyCode/delete.delete
+    events:
+      - http:
+          path: surveycode/{id}
           method: delete
           cors: true
 
