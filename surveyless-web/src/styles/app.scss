@@ -1,0 +1,56 @@
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/fa-brands";
+@import "~@fortawesome/fontawesome-free/scss/fa-regular";
+@import "~@fortawesome/fontawesome-free/scss/fa-solid";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+
+
+.jumbotron {
+  background-color: #00ace6;
+  color: #fff;
+}
+
+.code-card {
+  background-color: #0101010a;
+  .card-body {
+    font-size: 40px;
+  }
+}
+
+Button{
+  a {
+    color: #fff;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.large-thumbs {
+  font-size: 150px;
+}
+
+.fa-thumbs-down {
+  color: #ff9999;
+}
+.fa-thumbs-up {
+  color: #99ff99;
+}
+
+.card-deck {
+  width: 60%;
+  .card {
+    background-color: #0101010a;
+  }
+}
