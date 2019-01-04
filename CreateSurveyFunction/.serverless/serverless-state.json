@@ -279,10 +279,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-createsurvey",
-              "Handler": "CreateSurvey/create.create",
+              "Handler": "SurveyAdmin/create.create",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -298,14 +298,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreatesurveyLambdaVersion6qv6BhWWHilCYx4JPF2Qz9KsD6Q9anqyN9CAtBv5ggY": {
+          "CreatesurveyLambdaVersionz0v35GM2jZbruFZFI7zYUz5wODFXiFSaY6GdsrLjCdQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreatesurveyLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "ListsurveyLambdaFunction": {
@@ -315,10 +315,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-listsurvey",
-              "Handler": "CreateSurvey/list.list",
+              "Handler": "SurveyAdmin/list.list",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -334,14 +334,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListsurveyLambdaVersionVr5X3v1rqxPJWwrdiK0Muhd6x32tlAZtJCVyX40HSI": {
+          "ListsurveyLambdaVersionPMiu9dPBHU8rMWGWYWSAbOM3vnS9FlI3ImO8q1Dxc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListsurveyLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "GetsurveyLambdaFunction": {
@@ -351,10 +351,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-getsurvey",
-              "Handler": "CreateSurvey/get.get",
+              "Handler": "SurveyAdmin/get.get",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -370,14 +370,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetsurveyLambdaVersionJS0fNJN1CUj1jAShvV84oU3GKletDTHvUTWXTl3anfg": {
+          "GetsurveyLambdaVersionUuf3DZ2pXLahKNkJZcxr3erfQbDYq3nFSKlPVkH6fU8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetsurveyLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "UpdatesurveyLambdaFunction": {
@@ -387,10 +387,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-updatesurvey",
-              "Handler": "CreateSurvey/update.update",
+              "Handler": "SurveyAdmin/update.update",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -406,14 +406,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdatesurveyLambdaVersionSx1qZUozch4B8UEIplv8HGauDhwynQO4Sd6YgDuis": {
+          "UpdatesurveyLambdaVersionibWR4Prr8x7gP5aoLQGwkGXzLPaAz6Q0GeFc57hQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdatesurveyLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "DeletesurveyLambdaFunction": {
@@ -423,10 +423,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-deletesurvey",
-              "Handler": "CreateSurvey/delete.delete",
+              "Handler": "SurveyAdmin/delete.delete",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -442,14 +442,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeletesurveyLambdaVersionmGWHUDIXalOb3tiNUi1mJGs7e4gigzne88wFhjqNLg": {
+          "DeletesurveyLambdaVersiontew8d3Bj0U8k88p3U0PHCyY2r59cjZzIX1K4VUkIvk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeletesurveyLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "CreateCodeLambdaFunction": {
@@ -459,7 +459,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-createCode",
               "Handler": "CreateSurveyCode/create.create",
@@ -478,14 +478,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateCodeLambdaVersionSFL4Ef7hCKO3vqFDUc3CZMUHjeqY2Gtinnv641t0": {
+          "CreateCodeLambdaVersion6VGP0jPVWOF07uZVVPdeH9JJ9ALv1LOX75GzqapXKI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateCodeLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "ListCodeLambdaFunction": {
@@ -495,7 +495,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-listCode",
               "Handler": "CreateSurveyCode/list.list",
@@ -514,14 +514,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListCodeLambdaVersionHOyhMTlfVGhobYtvRYhwjrsnxaeelLyNui04RqvNn4g": {
+          "ListCodeLambdaVersionmQ8xrbFuk4FiX1WKPzfRZPFWCXMBagoNSCcHJZdY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListCodeLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "GetCodeLambdaFunction": {
@@ -531,7 +531,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-getCode",
               "Handler": "CreateSurveyCode/get.get",
@@ -550,14 +550,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetCodeLambdaVersionRCw41VKm0oCzxgrdSsAqHWzmsqfVp2JGGygLiHZzt5Q": {
+          "GetCodeLambdaVersion6BmnDp2AFOUVCSxox9Yxrh25cZ7IPXazhtR8OTm5Dg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetCodeLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "UpdateCodeLambdaFunction": {
@@ -567,7 +567,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-updateCode",
               "Handler": "CreateSurveyCode/update.update",
@@ -586,14 +586,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateCodeLambdaVersionKq6B1i7pUYpRknqGuW3rRxs1S3qM5FC3oeJnnT6b4": {
+          "UpdateCodeLambdaVersionS9PSTZqDbWBZX8IJMgPdTAFItB99m59pFF00dqRJ4": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateCodeLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "DeleteCodeLambdaFunction": {
@@ -603,7 +603,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-deleteCode",
               "Handler": "CreateSurveyCode/delete.delete",
@@ -622,14 +622,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeleteCodeLambdaVersionFePyPGVSRUS8aXmoH5Uvu4xMifYPFWfqN0g47AVY0": {
+          "DeleteCodeLambdaVersiont0tbxqvURZhU8ijjTcTMNLLCJ4KvxAU7p7RarRCYPDw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteCodeLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "CreateSurveyResponseLambdaFunction": {
@@ -639,10 +639,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-createSurveyResponse",
-              "Handler": "CreateSurveyFunction/create.create",
+              "Handler": "SurveyResponse/create.create",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -658,14 +658,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateSurveyResponseLambdaVersion3XYKAmrOhsLInDam8RqgnultuGkWRx7WnR8CRnpOjFM": {
+          "CreateSurveyResponseLambdaVersion5adi7KBe8LZM6qCQZLFnnHBjoSqo9OvToxIEFk0uw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateSurveyResponseLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "ListSurveyResponseLambdaFunction": {
@@ -675,10 +675,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-listSurveyResponse",
-              "Handler": "CreateSurveyFunction/list.list",
+              "Handler": "SurveyResponse/list.list",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -694,14 +694,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListSurveyResponseLambdaVersionHaFzaFa4HzU28Tds3EB9r1pyYgS6KhxcyPIoGvFIac": {
+          "ListSurveyResponseLambdaVersionOZF691i3mRjuVfY2byK7zVQl4oOCKK16nj2f9B4aQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListSurveyResponseLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "GetSurveyResponseLambdaFunction": {
@@ -711,10 +711,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-getSurveyResponse",
-              "Handler": "CreateSurveyFunction/get.get",
+              "Handler": "SurveyResponse/get.get",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -730,14 +730,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetSurveyResponseLambdaVersionjHAM7IwNfuezlvw0dCRlMezjesuch5Zfo1r9GdEVE": {
+          "GetSurveyResponseLambdaVersionowNK9WAdRG6OMyMEwA28NGTvfNtGJzXxihm0epvvLw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetSurveyResponseLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "DeleteSurveyResponseLambdaFunction": {
@@ -747,10 +747,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z/surveyless.zip"
+                "S3Key": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z/surveyless.zip"
               },
               "FunctionName": "surveyless-dev-deleteSurveyResponse",
-              "Handler": "CreateSurveyFunction/delete.delete",
+              "Handler": "SurveyResponse/delete.delete",
               "MemorySize": 1024,
               "Role": {
                 "Fn::GetAtt": [
@@ -766,14 +766,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "DeleteSurveyResponseLambdaVersionCvFVHWmfck6wGKosAtpWccv8h70O5svSrX40v6Twg": {
+          "DeleteSurveyResponseLambdaVersionOR5uQjhSYHKMy6KDmOxID6b6tyq71Gn8VVDK66tUs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteSurveyResponseLambdaFunction"
               },
-              "CodeSha256": "Gs41ND7DfJgO59sqLubDXZD40kAadV0cM0BoLOLjl4o="
+              "CodeSha256": "3+/tz/TyiSj3kw1gEXkmlemDligv59d/6u5niypeLVc="
             }
           },
           "ApiGatewayRestApi": {
@@ -1752,7 +1752,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1546624349937": {
+          "ApiGatewayDeployment1546636447610": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -2517,85 +2517,85 @@
           "CreatesurveyLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreatesurveyLambdaVersion6qv6BhWWHilCYx4JPF2Qz9KsD6Q9anqyN9CAtBv5ggY"
+              "Ref": "CreatesurveyLambdaVersionz0v35GM2jZbruFZFI7zYUz5wODFXiFSaY6GdsrLjCdQ"
             }
           },
           "ListsurveyLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListsurveyLambdaVersionVr5X3v1rqxPJWwrdiK0Muhd6x32tlAZtJCVyX40HSI"
+              "Ref": "ListsurveyLambdaVersionPMiu9dPBHU8rMWGWYWSAbOM3vnS9FlI3ImO8q1Dxc"
             }
           },
           "GetsurveyLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetsurveyLambdaVersionJS0fNJN1CUj1jAShvV84oU3GKletDTHvUTWXTl3anfg"
+              "Ref": "GetsurveyLambdaVersionUuf3DZ2pXLahKNkJZcxr3erfQbDYq3nFSKlPVkH6fU8"
             }
           },
           "UpdatesurveyLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdatesurveyLambdaVersionSx1qZUozch4B8UEIplv8HGauDhwynQO4Sd6YgDuis"
+              "Ref": "UpdatesurveyLambdaVersionibWR4Prr8x7gP5aoLQGwkGXzLPaAz6Q0GeFc57hQ"
             }
           },
           "DeletesurveyLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeletesurveyLambdaVersionmGWHUDIXalOb3tiNUi1mJGs7e4gigzne88wFhjqNLg"
+              "Ref": "DeletesurveyLambdaVersiontew8d3Bj0U8k88p3U0PHCyY2r59cjZzIX1K4VUkIvk"
             }
           },
           "CreateCodeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateCodeLambdaVersionSFL4Ef7hCKO3vqFDUc3CZMUHjeqY2Gtinnv641t0"
+              "Ref": "CreateCodeLambdaVersion6VGP0jPVWOF07uZVVPdeH9JJ9ALv1LOX75GzqapXKI"
             }
           },
           "ListCodeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListCodeLambdaVersionHOyhMTlfVGhobYtvRYhwjrsnxaeelLyNui04RqvNn4g"
+              "Ref": "ListCodeLambdaVersionmQ8xrbFuk4FiX1WKPzfRZPFWCXMBagoNSCcHJZdY"
             }
           },
           "GetCodeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetCodeLambdaVersionRCw41VKm0oCzxgrdSsAqHWzmsqfVp2JGGygLiHZzt5Q"
+              "Ref": "GetCodeLambdaVersion6BmnDp2AFOUVCSxox9Yxrh25cZ7IPXazhtR8OTm5Dg"
             }
           },
           "UpdateCodeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateCodeLambdaVersionKq6B1i7pUYpRknqGuW3rRxs1S3qM5FC3oeJnnT6b4"
+              "Ref": "UpdateCodeLambdaVersionS9PSTZqDbWBZX8IJMgPdTAFItB99m59pFF00dqRJ4"
             }
           },
           "DeleteCodeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteCodeLambdaVersionFePyPGVSRUS8aXmoH5Uvu4xMifYPFWfqN0g47AVY0"
+              "Ref": "DeleteCodeLambdaVersiont0tbxqvURZhU8ijjTcTMNLLCJ4KvxAU7p7RarRCYPDw"
             }
           },
           "CreateSurveyResponseLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateSurveyResponseLambdaVersion3XYKAmrOhsLInDam8RqgnultuGkWRx7WnR8CRnpOjFM"
+              "Ref": "CreateSurveyResponseLambdaVersion5adi7KBe8LZM6qCQZLFnnHBjoSqo9OvToxIEFk0uw"
             }
           },
           "ListSurveyResponseLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListSurveyResponseLambdaVersionHaFzaFa4HzU28Tds3EB9r1pyYgS6KhxcyPIoGvFIac"
+              "Ref": "ListSurveyResponseLambdaVersionOZF691i3mRjuVfY2byK7zVQl4oOCKK16nj2f9B4aQ"
             }
           },
           "GetSurveyResponseLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetSurveyResponseLambdaVersionjHAM7IwNfuezlvw0dCRlMezjesuch5Zfo1r9GdEVE"
+              "Ref": "GetSurveyResponseLambdaVersionowNK9WAdRG6OMyMEwA28NGTvfNtGJzXxihm0epvvLw"
             }
           },
           "DeleteSurveyResponseLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteSurveyResponseLambdaVersionCvFVHWmfck6wGKosAtpWccv8h70O5svSrX40v6Twg"
+              "Ref": "DeleteSurveyResponseLambdaVersionOR5uQjhSYHKMy6KDmOxID6b6tyq71Gn8VVDK66tUs"
             }
           },
           "ServiceEndpoint": {
@@ -2640,7 +2640,7 @@
     "pluginsData": {},
     "functions": {
       "createsurvey": {
-        "handler": "CreateSurvey/create.create",
+        "handler": "SurveyAdmin/create.create",
         "events": [
           {
             "http": {
@@ -2677,7 +2677,7 @@
         "vpc": {}
       },
       "listsurvey": {
-        "handler": "CreateSurvey/list.list",
+        "handler": "SurveyAdmin/list.list",
         "events": [
           {
             "http": {
@@ -2714,7 +2714,7 @@
         "vpc": {}
       },
       "getsurvey": {
-        "handler": "CreateSurvey/get.get",
+        "handler": "SurveyAdmin/get.get",
         "events": [
           {
             "http": {
@@ -2751,7 +2751,7 @@
         "vpc": {}
       },
       "updatesurvey": {
-        "handler": "CreateSurvey/update.update",
+        "handler": "SurveyAdmin/update.update",
         "events": [
           {
             "http": {
@@ -2788,7 +2788,7 @@
         "vpc": {}
       },
       "deletesurvey": {
-        "handler": "CreateSurvey/delete.delete",
+        "handler": "SurveyAdmin/delete.delete",
         "events": [
           {
             "http": {
@@ -3010,7 +3010,7 @@
         "vpc": {}
       },
       "createSurveyResponse": {
-        "handler": "CreateSurveyFunction/create.create",
+        "handler": "SurveyResponse/create.create",
         "events": [
           {
             "http": {
@@ -3047,7 +3047,7 @@
         "vpc": {}
       },
       "listSurveyResponse": {
-        "handler": "CreateSurveyFunction/list.list",
+        "handler": "SurveyResponse/list.list",
         "events": [
           {
             "http": {
@@ -3084,7 +3084,7 @@
         "vpc": {}
       },
       "getSurveyResponse": {
-        "handler": "CreateSurveyFunction/get.get",
+        "handler": "SurveyResponse/get.get",
         "events": [
           {
             "http": {
@@ -3121,7 +3121,7 @@
         "vpc": {}
       },
       "deleteSurveyResponse": {
-        "handler": "CreateSurveyFunction/delete.delete",
+        "handler": "SurveyResponse/delete.delete",
         "events": [
           {
             "http": {
@@ -3232,7 +3232,7 @@
     "artifact": "/Users/arjunpatel/SharedFolder/LearningProgramming/Cloud/Serverless/ServerlessFramewok/surveyless/CreateSurveyFunction/.serverless/surveyless.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/surveyless/dev/1546624349917-2019-01-04T17:52:29.917Z",
+    "artifactDirectoryName": "serverless/surveyless/dev/1546636447587-2019-01-04T21:14:07.587Z",
     "artifact": "surveyless.zip"
   }
 }
