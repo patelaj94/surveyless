@@ -104,7 +104,36 @@ functions:
           path: surveycode/{id}
           method: delete
           cors: true
+  createSurveyResponse:
+    handler: CreateSurveyFunction/create.create
+    events:
+      - http:
+          path: surveyResponses
+          method: post
+          cors: true
+  listSurveyResponse:
+    handler: CreateSurveyFunction/list.list
+    events:
+      - http:
+          path: surveyResponses
+          method: get
+          cors: true
 
+  getSurveyResponse:
+    handler: CreateSurveyFunction/get.get
+    events:
+      - http:
+          path: surveyResponses/{id}
+          method: get
+          cors: true
+
+  deleteSurveyResponse:
+    handler: CreateSurveyFunction/delete.delete
+    events:
+      - http:
+          path: surveyResponses/{id}
+          method: delete
+          cors: true
 resources:
   Resources:
     surveyQuestions:
