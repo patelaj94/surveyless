@@ -4,20 +4,30 @@ import {ControlLabel, FormControl, Form} from 'react-bootstrap'
 import autobind from 'react-autobind'
 import {Link} from 'react-router-dom'
 
-class HomePage extends React.Component {
+class CreateSurveyPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value:''
+      name:'',
+      question:''
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleNameChange(e) {
+    this.setState({
+       name: e.target.value
+    })
+    console.log(e.target.value);
+  }
+
+  handleQuestionChange(e) {
     this.setState({
        value: e.target.value
     })
+    console.log(e.target.value);
   }
 
   getValidationState(e) {
@@ -33,21 +43,27 @@ class HomePage extends React.Component {
       <main>
         <div className="container-fluid pt-3 text-center">
           <div className="jumbotron">
-              <h1>welcome to surveyless</h1>
+              <h1>create survey</h1>
           </div>
           <div className="code-card card w-50 mx-auto">
             <div className="card-body">
-            <h2>enter the code below:</h2>
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} >
               <FormGroup
                 controlId="formBasicText"
                 validationState={this.getValidationState()}
               >
                 <FormControl
                   type="text"
-                  value={this.state.value}
-                  placeholder="Enter code here"
-                  onChange={this.handleChange}
+                  className="mb-3"
+                  value={this.state.name}
+                  placeholder="Please the name of the survey"
+                  onChange={this.handleNameChange}
+                />
+                <FormControl
+                  type="text"
+                  value={this.state.question}
+                  placeholder="please enter your question"
+                  onChange={this.handleQuestionChange}
                 />
                 <Button type="submit">
                   <Link to={`/survey/${this.state.value}`}>Submit</Link>
@@ -56,15 +72,10 @@ class HomePage extends React.Component {
             </Form>
             </div>
           </div>
-          <div className="pt-2">
-            <Button>
-              <Link to={`/create`}>Create Survey</Link>
-            </Button>
-          </div>
         </div>
       </main>
     );
   }
 
 }
-export default HomePage
+export default CreateSurveyPage

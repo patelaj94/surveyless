@@ -1,11 +1,23 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
-  entry: './src/main.js',
+  resolve: {
+    modules: [path.resolve('./src'), 'node_modules'],
+    extensions: ['.js', '.csv', '.json', '.scss', '.css', '.html']
+  },
+
+  entry: {
+    main: ['whatwg-fetch', 'core-js/es6', 'react-hot-loader/patch', 'main.js']
+  }
+
   output: {
     path: path.resolve(__dirname, 'src'),
     filename: 'bundle.js'
   },
+
   devServer: {
     inline: true,
     contentBase: './src',
