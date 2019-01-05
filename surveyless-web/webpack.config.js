@@ -11,7 +11,7 @@ module.exports = {
 
   entry: {
     main: ['whatwg-fetch', 'core-js/es6', 'react-hot-loader/patch', 'main.js']
-  }
+  },
 
   output: {
     path: path.resolve(__dirname, 'src'),
