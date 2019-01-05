@@ -16,6 +16,7 @@ class SurveyPage extends React.Component {
   }
 
   componentDidMount() {
+    // get here, get all of the metadata about survey
     this.setState({
       code: this.props.match.params.surveyKey,
       question: 'this is a question?'

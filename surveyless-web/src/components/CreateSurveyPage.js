@@ -9,7 +9,8 @@ class CreateSurveyPage extends React.Component {
     super(props, context);
     this.state = {
       name:'',
-      question:''
+      question:'',
+      showResult: false
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
@@ -20,18 +21,23 @@ class CreateSurveyPage extends React.Component {
     this.setState({
        name: e.target.value
     })
-    console.log(e.target.value);
   }
 
   handleQuestionChange(e) {
     this.setState({
        question: e.target.value
     })
-    console.log(e.target.value);
   }
 
+
   handleSubmit(e) {
-    this.props.history.push(`/survey/${this.state.value}`);
+    // post here, display link to survey with random kyEyQEagBC5mBEFlIYvdg
+    // response from post
+    e.preventDefault();
+    this.setState({
+      showResult: true,
+      value: 1231231
+    })
   }
 
   render() {
@@ -58,9 +64,10 @@ class CreateSurveyPage extends React.Component {
                   placeholder="please enter your question"
                   onChange={this.handleQuestionChange}
                 />
-                <Button type="submit" color="primary">
-                  <Link to={`/survey/${this.state.value}`}>Submit</Link>
-                </Button>
+                {this.state.showResult ? <div style={{ fontSize: '18px' }} className="pt-3">
+                  <h6>thanks! take a look at your survey! </h6>
+                  <Link to={`/survey/${this.state.value}`} >{location.host}/survey/{this.state.value}</Link>
+                  </div> : <Button type="submit" color="primary">Submit</Button>}
               </FormGroup>
             </Form>
             </div>
