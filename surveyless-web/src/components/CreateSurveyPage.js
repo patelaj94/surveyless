@@ -25,7 +25,7 @@ class CreateSurveyPage extends React.Component {
 
   handleQuestionChange(e) {
     this.setState({
-       value: e.target.value
+       question: e.target.value
     })
     console.log(e.target.value);
   }
@@ -49,7 +49,7 @@ class CreateSurveyPage extends React.Component {
                   type="text"
                   className="mb-3"
                   value={this.state.name}
-                  placeholder="Please the name of the survey"
+                  placeholder="please enter the name of the survey"
                   onChange={this.handleNameChange}
                 />
                 <FormControl
