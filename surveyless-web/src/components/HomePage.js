@@ -20,10 +20,6 @@ class HomePage extends React.Component {
     })
   }
 
-  getValidationState(e) {
-
-  }
-
   handleSubmit(e) {
     this.props.history.push(`/survey/${this.state.value}`);
   }
@@ -32,34 +28,28 @@ class HomePage extends React.Component {
     return (
       <main>
         <div className="container-fluid pt-3 text-center">
-          <div className="jumbotron">
+          <div className="jumbotron mb-5">
               <h1>welcome to surveyless</h1>
           </div>
           <div className="code-card card w-50 mx-auto">
             <div className="card-body">
-            <h2>enter the code below:</h2>
+            <h3>enter the code below:</h3>
             <Form onSubmit={this.handleSubmit}>
-              <FormGroup
-                controlId="formBasicText"
-                validationState={this.getValidationState()}
-              >
+              <FormGroup>
                 <FormControl
                   type="text"
                   value={this.state.value}
                   placeholder="Enter code here"
                   onChange={this.handleChange}
                 />
-                <Button type="submit">
+                <Button type="submit" color="primary">
                   <Link to={`/survey/${this.state.value}`}>Submit</Link>
                 </Button>
               </FormGroup>
             </Form>
             </div>
           </div>
-          <div className="pt-2">
-            <Button>
-              <Link to={`/create`}>Create Survey</Link>
-            </Button>
+          <div className="">Want to create a survey? just click <Link to={`/create`}>here</Link>!
           </div>
         </div>
       </main>

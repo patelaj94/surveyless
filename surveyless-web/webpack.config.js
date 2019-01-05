@@ -1,3 +1,4 @@
+'use strict';
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -14,13 +15,15 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'src'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, '/build'),
+    filename: '[name].bundle.js',
+    publicPath: '/'
   },
 
   devServer: {
     inline: true,
-    contentBase: './src',
+    contentBase: 'src',
+    host: '0.0.0.0',
     port: 9000,
     historyApiFallback: true
   },
@@ -49,5 +52,13 @@ module.exports = {
       }
     ]
   },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      chunksSortMode: 'dependency'
+    })
+  ],
+  
   performance: { hints: false }
 }

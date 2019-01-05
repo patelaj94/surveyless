@@ -30,10 +30,6 @@ class CreateSurveyPage extends React.Component {
     console.log(e.target.value);
   }
 
-  getValidationState(e) {
-
-  }
-
   handleSubmit(e) {
     this.props.history.push(`/survey/${this.state.value}`);
   }
@@ -42,16 +38,13 @@ class CreateSurveyPage extends React.Component {
     return (
       <main>
         <div className="container-fluid pt-3 text-center">
-          <div className="jumbotron">
-              <h1>create survey</h1>
+          <div className="jumbotron mb-5">
+              <h1>create a survey</h1>
           </div>
           <div className="code-card card w-50 mx-auto">
             <div className="card-body">
             <Form onSubmit={this.handleSubmit} >
-              <FormGroup
-                controlId="formBasicText"
-                validationState={this.getValidationState()}
-              >
+              <FormGroup>
                 <FormControl
                   type="text"
                   className="mb-3"
@@ -65,7 +58,7 @@ class CreateSurveyPage extends React.Component {
                   placeholder="please enter your question"
                   onChange={this.handleQuestionChange}
                 />
-                <Button type="submit">
+                <Button type="submit" color="primary">
                   <Link to={`/survey/${this.state.value}`}>Submit</Link>
                 </Button>
               </FormGroup>

@@ -2,7 +2,7 @@
   "name": "surveyless-web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development --progress"
   },

@@ -33,7 +33,7 @@ class SurveyPage extends React.Component {
     return (
       <main>
         <div className="container-fluid pt-3 text-center">
-          <div className="jumbotron">
+          <div className="jumbotron mb-5">
               <h1>{this.state.question}</h1>
               <h2>code: {this.state.code}</h2>
           </div>
