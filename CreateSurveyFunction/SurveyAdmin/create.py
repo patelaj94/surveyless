@@ -23,9 +23,13 @@ def create(event, context):
         'survey_unique_id': str(uuid.uuid1()),
         'survey_name': data['name'],
         'question': data['question_text'],
+        'presenters': data['presenters'],
         'active': True,
+        # Will write a separate lambda which will check all active survey's surveyCode, 
+        # create a random int of 4 digits and ensure it is not in the list of active surveycodes
+        'surveyCode': data['surveyCode'],
         'createdAt': timestamp,
-        'updatedAt': timestamp,
+        'updatedAt': timestamp
     }
 
     # write the todo to the database

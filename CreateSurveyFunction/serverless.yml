@@ -66,44 +66,7 @@ functions:
           path: survey/{id}
           method: delete
           cors: true
-  createCode:
-    handler: CreateSurveyCode/create.create
-    events:
-      - http:
-          path: surveycode
-          method: post
-          cors: true
-  listCode:
-    handler: CreateSurveyCode/list.list
-    events:
-      - http:
-          path: surveycode
-          method: get
-          cors: true
 
-  getCode:
-    handler: CreateSurveyCode/get.get
-    events:
-      - http:
-          path: surveycode/{id}
-          method: get
-          cors: true
-
-  updateCode:
-    handler: CreateSurveyCode/update.update
-    events:
-      - http:
-          path: surveycode/{id}
-          method: put
-          cors: true
-
-  deleteCode:
-    handler: CreateSurveyCode/delete.delete
-    events:
-      - http:
-          path: surveycode/{id}
-          method: delete
-          cors: true
   createSurveyResponse:
     handler: SurveyResponse/create.create
     events:
@@ -155,37 +118,12 @@ resources:
       Properties:
         TableName: surveyResponses
         AttributeDefinitions:
-          - AttributeName: survey_unique_id_question_text
+          - AttributeName: survey_unique_id
             AttributeType: S
         KeySchema:
   # TODO: consider different keyType options?
-          - AttributeName: survey_unique_id_question_text
+          - AttributeName: survey_unique_id
             KeyType: HASH 
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-    codeToSurvey:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: codeToSurvey
-        AttributeDefinitions:
-          - AttributeName: survey_code
-            AttributeType: S
-        KeySchema:
-  # TODO: consider different keyType options?
-          - AttributeName: survey_code
-            KeyType: HASH 
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-    # CreateSurveyFunctionPermission:
-    #   Type: 'AWS::Lambda::Permission'
-    #   Properties:
-    #     Action: 'lambda:InvokeFunction'
-    #     FunctionName:
-    #       'Fn::GetAtt':
-    #         - CreateSurveyFunction
-    #         - Arn
-    #     Principal: apigateway.amazonaws.com
-    #     SourceArn:
-    #       'Fn::Sub': 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:*/*/*/*'

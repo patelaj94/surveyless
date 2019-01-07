@@ -12,24 +12,25 @@ def create(event, context):
     data = json.loads(event['body'])
     if 'name' not in data:
         logging.error("Validation Failed")
-        raise Exception("Couldn't create the Survey Code.")
+        raise Exception("Couldn't create the survey response.")
         return
 
     timestamp = int(time.time() * 1000)
 
-    table = dynamodb.Table("codeToSurvey")
+    table = dynamodb.Table("surveyResponses")
 
     survey = {
-        'survey_code': str(uuid.uuid1()),
-        'survey_id': data['survey_id'],
-        'question': data['question_text'],
-        'active': True,
+        'survey_unique_id': data['survey_unique_id'],
+        'answer': data['question_text'],
+        'totalYes': 0,
+        'totalNo': 0,
+        'active' : True,
         'createdAt': timestamp,
-        'updatedAt': timestamp,
+        'updatedAt': timestamp
     }
 
     # write the todo to the database
-    table.put_item(Item=survey)
+    table.update_item(Item=survey)
 
     # create a response
     response = {

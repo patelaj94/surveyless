@@ -20,12 +20,13 @@ def create(event, context):
     table = dynamodb.Table("surveyResponses")
 
     survey = {
-        'survey_unique_id_question_text': str(uuid.uuid1()),
         'survey_unique_id': data['survey_unique_id'],
         'answer': data['question_text'],
-        'active': True,
+        'totalYes': 0,
+        'totalNo': 0,
+        'active' : True,
         'createdAt': timestamp,
-        'updatedAt': timestamp,
+        'updatedAt': timestamp
     }
 
     # write the todo to the database
