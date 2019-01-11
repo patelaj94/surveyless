@@ -19,7 +19,7 @@ class SurveyPage extends React.Component {
     // get here, get all of the metadata about survey
     this.setState({
       code: this.props.match.params.surveyKey,
-      question: 'this is a question?'
+      question: 'Did you enjoy The Kubernetes Session delivered by Homer, Silent Bob, and Groundskeeper Willie'
     });
   }
 
@@ -35,8 +35,7 @@ class SurveyPage extends React.Component {
       <main>
         <div className="container-fluid pt-3 text-center">
           <div className="jumbotron mb-5">
-              <h1>{this.state.question}</h1>
-              <h2>code: {this.state.code}</h2>
+              <h1>{this.state.question}?</h1>
           </div>
           <div className="card-deck mx-auto">
             <div className="card">
@@ -54,7 +53,5 @@ class SurveyPage extends React.Component {
       </main>
     );
   }
-
-
 }
 export default SurveyPage

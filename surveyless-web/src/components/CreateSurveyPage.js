@@ -8,19 +8,11 @@ class CreateSurveyPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      name:'',
       question:'',
       showResult: false
     }
-    this.handleNameChange = this.handleNameChange.bind(this);
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleNameChange(e) {
-    this.setState({
-       name: e.target.value
-    })
   }
 
   handleQuestionChange(e) {
@@ -51,13 +43,6 @@ class CreateSurveyPage extends React.Component {
             <div className="card-body">
             <Form onSubmit={this.handleSubmit} >
               <FormGroup>
-                <FormControl
-                  type="text"
-                  className="mb-3"
-                  value={this.state.name}
-                  placeholder="please enter the name of the survey"
-                  onChange={this.handleNameChange}
-                />
                 <FormControl
                   type="text"
                   value={this.state.question}
