@@ -29,11 +29,11 @@ class HomePage extends React.Component {
       <main>
         <div className="container-fluid pt-3 text-center">
           <div className="jumbotron mb-5">
-              <h1>welcome to surveyless</h1>
+              <h1>welcome to surveyless, where less is more!</h1>
           </div>
           <div className="code-card card w-50 mx-auto">
             <div className="card-body">
-            <h3>enter the code below:</h3>
+            <h3>enter a code below to take a survey:</h3>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
                 <FormControl
