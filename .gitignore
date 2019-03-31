@@ -23,4 +23,4 @@ yarn-error.log*
 
 #SERVERLESS STUFF
 *node_modules
-.serverless
+*.serverless
