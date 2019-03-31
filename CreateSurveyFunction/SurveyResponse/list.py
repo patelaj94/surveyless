@@ -1,7 +1,7 @@
 import json
 import os
 
-from CreateSurvey import decimalencoder
+from SurveyAdmin import decimalencoder
 import boto3
 dynamodb = boto3.resource('dynamodb')
 

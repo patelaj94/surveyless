@@ -3,16 +3,27 @@ import {FormGroup, Col, Button} from 'reactstrap'
 import {ControlLabel, FormControl, Form} from 'react-bootstrap'
 import autobind from 'react-autobind'
 import {Link} from 'react-router-dom'
+import { createSurveyPost } from '../actions/SurveyAdminActions';
 
 class CreateSurveyPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      name:'',
       question:'',
+      surveyCode:'',
       showResult: false
     }
+    this.handleNameChange = this.handleNameChange.bind(this);
     this.handleQuestionChange = this.handleQuestionChange.bind(this);
+    this.handleSurveyCodeChange = this.handleSurveyCodeChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleNameChange(e) {
+    this.setState({
+       name: e.target.value
+    })
   }
 
   handleQuestionChange(e) {
@@ -21,6 +32,11 @@ class CreateSurveyPage extends React.Component {
     })
   }
 
+  handleSurveyCodeChange(e) {
+    this.setState({
+       surveyCode: e.target.value
+    })
+  }
 
   handleSubmit(e) {
     // post here, display link to survey with random kyEyQEagBC5mBEFlIYvdg
@@ -28,8 +44,11 @@ class CreateSurveyPage extends React.Component {
     e.preventDefault();
     this.setState({
       showResult: true,
-      value: 1231231
+      value: this.state.surveyCode
     })
+
+    createSurveyPost(this.state);
+    console.log("done and done");
   }
 
   render() {
@@ -45,9 +64,21 @@ class CreateSurveyPage extends React.Component {
               <FormGroup>
                 <FormControl
                   type="text"
+                  value={this.state.name}
+                  placeholder="enter your survey name"
+                  onChange={this.handleNameChange}
+                /><br/>
+                <FormControl
+                  type="text"
                   value={this.state.question}
-                  placeholder="please enter your question"
+                  placeholder="enter your question"
                   onChange={this.handleQuestionChange}
+                /><br/>
+                <FormControl
+                  type="text"
+                  value={this.state.surveyCode}
+                  placeholder="enter your survey code"
+                  onChange={this.handleSurveyCodeChange}
                 />
                 {this.state.showResult ? <div style={{ fontSize: '18px' }} className="pt-3">
                   <h6>thanks! take a look at your survey! </h6>
