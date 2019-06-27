@@ -83,18 +83,20 @@ export default class Home extends React.Component {
                           return swal_button_field_values(button_input_fields);
                         },
                         padding: "3em",
-                        background: "#fff url(/images/trees.png)",
+                        background: "#fff url(https://sweetalert2.github.io/images/trees.png)",
                         backdrop: `
 													rgba(0,0,123,0.4)
-													url("/images/nyan-cat.gif")
+													url("https://sweetalert2.github.io/images/nyan-cat.gif")
 													center left
 													no-repeat
 												`
                       }).then(result => {
                         if (result.value) {
                           const response_dict = swal_button_create_button_dict_from_result(result, button_input_fields);
-
                           console.log({ response_dict });
+                          Survey.create({ body: response_dict });
+
+                          // Survey.getAll().then(x => this.setState({ surveys: x }));
                         }
                       });
                     }}
