@@ -10,7 +10,7 @@ dynamodb = boto3.resource('dynamodb')
 
 def create(event, context):
     data = json.loads(event['body'])
-    if 'name' not in data:
+    if 'survey_unique_id' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't create the survey response.")
         return
