@@ -28,6 +28,14 @@ functions:
     #       path: /createSurvey
     #       method: POST
     #       cors: true
+  
+  twilioresponse:
+    handler: Twilio/handler.handler
+    events:
+      - http:
+          path: survey
+          method: post
+          cors: true
   createsurvey:
     handler: SurveyAdmin/create.create
     events:
