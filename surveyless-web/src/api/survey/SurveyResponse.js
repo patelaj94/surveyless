@@ -1,7 +1,7 @@
 const send = async (payload) => {
 	const res = await fetch('/surveyResponses', {
 		method: 'POST',
-		body: payload
+		body: JSON.stringify(payload)
 	})
 	const json = await res.json()
 	return json
