@@ -29,11 +29,11 @@ functions:
     #       method: POST
     #       cors: true
   
-  twilioresponse:
+  twilioResponse:
     handler: Twilio/handler.handler
     events:
       - http:
-          path: survey
+          path: sms
           method: post
           cors: true
   createsurvey:
