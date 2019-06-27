@@ -1,0 +1,17 @@
+.card {
+	border-radius: 10px;
+	transition: all 0.2s ease;
+}
+
+.card:hover {
+	transform: translatey(-5px);
+	box-shadow: 2px 10px 10px 5px silver;
+}
+
+.card-content {
+	text-align: center;
+	min-height: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

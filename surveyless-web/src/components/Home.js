@@ -38,12 +38,20 @@ export default class Home extends React.Component {
 								<span aria-hidden="true"></span>
 							</a>
 						</div>
+	<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+						<a class="button is-info">
+							<strong>Create Survey</strong>
+						</a>
+					</div>
+				</div>
+			</div>
 					</nav>
 				</div>
 				<div class="hero-body">
 					<div class="container">
 						<div>
-							<input class="input" type="text" placeholder="Search from existing surveys" />
 						</div>
 						<div class="columns is-multiline">
 							{surveyCards}
@@ -54,3 +62,4 @@ export default class Home extends React.Component {
 		)
 	}
 }
+							// <input class="input" type="text" placeholder="Search from existing surveys" />
