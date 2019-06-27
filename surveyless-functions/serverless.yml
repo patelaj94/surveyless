@@ -30,7 +30,7 @@ functions:
     #       cors: true
   
   twilioResponse:
-    handler: Twilio/handler.handler
+    handler: TwilioResponse/handler.handler
     events:
       - http:
           path: sms
