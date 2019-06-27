@@ -97,33 +97,34 @@ functions:
           path: surveyResponses/{id}
           method: delete
           cors: true
-resources:
-  Resources:
-    surveyQuestions:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: surveyQuestionsInfo
-        AttributeDefinitions:
-          - AttributeName: survey_unique_id
-            AttributeType: S
-        KeySchema:
-  # TODO: consider different keyType options?
-          - AttributeName: survey_unique_id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-    surveyResponses:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        TableName: surveyResponses
-        AttributeDefinitions:
-          - AttributeName: survey_unique_id
-            AttributeType: S
-        KeySchema:
-  # TODO: consider different keyType options?
-          - AttributeName: survey_unique_id
-            KeyType: HASH 
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+Resources:
+  surveyQuestions:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: surveyQuestionsInfo
+      AttributeDefinitions:
+        - AttributeName: surveyId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: surveyId
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+  surveyResponses:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: surveyResponses
+      AttributeDefinitions:
+        - AttributeName: surveyId
+          AttributeType: S
+        - AttributeName: questionId
+          AttributeType: N
+      KeySchema:
+        - AttributeName: surveyId
+          KeyType: HASH 
+        - AttributeName: questionId
+          AttributeType: RANGE
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1s
