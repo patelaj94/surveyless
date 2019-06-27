@@ -4,8 +4,25 @@ import os
 import time
 import uuid
 import boto3
+import hashlib
 
 dynamodb = boto3.resource('dynamodb')
+
+def get_survey_id(string):
+    nonce = 0
+    out = hashlib.sha256((string + str(nonce)).encode('utf-8')).hexdigest()[-6:]
+    while nonce < 1000: 
+        result = table.get_item(
+            Key={
+                'surveyId': out
+            }
+        )
+        if "Item" not in result
+            return out
+        else:
+            nonce += 1
+            out = hashlib.sha256((string + str(nonce)).encode('utf-8')).hexdigest()[-6:]
+    return None
 
 def create(event, context):
 
@@ -13,7 +30,7 @@ def create(event, context):
         data = json.loads("".join(event["body"]))["body"]
     except ValueError as e:
         data = event["body"]
-    
+
     if 'name' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't create the Survey.")
@@ -23,14 +40,12 @@ def create(event, context):
 
     table = dynamodb.Table("surveyQuestionsInfo")
 
+    survey_generated_id = get_survey_id(data["survey_name"])
     survey = {
-        'survey_unique_id': str(uuid.uuid1()),
+        'surveyId': survey_generated_id,
         'survey_name': data['survey_name'],
         'question': data['question'],
         'active': True,
-        # Will write a separate lambda which will check all active survey's surveyCode, 
-        # create a random int of 4 digits and ensure it is not in the list of active surveycodes
-        'surveyCode': data['survey_code'],
         'createdAt': timestamp,
         'updatedAt': timestamp
     }

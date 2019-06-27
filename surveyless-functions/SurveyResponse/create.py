@@ -13,7 +13,7 @@ def create(event, context):
         data = json.loads("".join(event["body"]))["body"]
     except ValueError as e:
         data = event["body"]
-    
+
     if 'name' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't create the survey response.")
@@ -22,9 +22,9 @@ def create(event, context):
     timestamp = int(time.time() * 1000)
 
     table = dynamodb.Table("surveyResponses")
-
     survey = {
-        'survey_unique_id': data['survey_unique_id'],
+        'surveyId': data['surveyId'],
+        'questionId' : data['questionId'],
         'answer': data['question_text'],
         'totalYes': 0,
         'totalNo': 0,

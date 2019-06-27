@@ -101,7 +101,7 @@ Resources:
   surveyQuestions:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: surveyQuestionsInfo
+      TableName: surveyQuestions
       AttributeDefinitions:
         - AttributeName: surveyId
           AttributeType: S
