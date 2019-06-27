@@ -9,7 +9,7 @@ dynamodb = boto3.resource('dynamodb')
 
 
 def create(event, context):
-    data = json.loads(event['body'])
+    data = json.loads(event['body'])['body']
     if 'survey_unique_id' not in data:
         logging.error("Validation Failed")
         raise Exception("Couldn't create the survey response.")
@@ -28,7 +28,7 @@ def create(event, context):
         'createdAt': timestamp,
         'updatedAt': timestamp
     }
-
+    
     # write the todo to the database
     table.put_item(Item=survey)
 
