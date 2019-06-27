@@ -12,7 +12,7 @@ def get(event, context):
     # fetch todo from the database
     result = table.get_item(
         Key={
-            'survey_unique_id_question_text': event['pathParameters']['id']
+            'survey_unique_id': event['pathParameters']['id']
         }
     )
 
