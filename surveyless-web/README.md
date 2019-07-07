@@ -1,4 +1,10 @@
-To Run:
-1. npm install
-2. npm start
-3. localhost:9000
+# Start-up
+
+In `package.json` change the `proxy` field to the hostname of the lambda services (from `serverless deploy`).
+
+Then start server:  
+```bash
+npm i 
+npm run start
+```
+

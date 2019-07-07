@@ -1,49 +1,35 @@
 {
   "name": "surveyless-web",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/main.js",
-  "scripts": {
-    "start": "webpack-dev-server --mode=development --progress"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.1.0",
-    "autoprefixer": "^9.4.3",
-    "bootstrap": "^4.1.3",
-    "core-js": "2.6.1",
-    "css-loader": "^2.0.1",
-    "es6-promise": "^4.2.6",
-    "html-loader": "^0.5.5",
-    "isomorphic-fetch": "^2.2.1",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.6",
-    "postcss-loader": "^3.0.0",
-    "precss": "^4.0.0",
-    "react": "^16.6.3",
-    "react-autobind": "1.0.6",
-    "react-bootstrap": "^0.32.4",
-    "react-dom": "^16.6.3",
-    "react-router": "4.3.1",
-    "react-router-dom": "4.2.1",
-    "react-scripts": "^2.1.8",
-    "reactstrap": "^6.5.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "whatwg-fetch": "^3.0.0"
+    "@material-ui/core": "^4.1.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "sweetalert2": "^8.13.0",
+    "underscore": "^1.9.1"
   },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.0",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "html-webpack-plugin": "3.2.0",
-    "node-sass": "^4.11.0",
-    "react-hot-loader": "4.1.1",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://0anu1cii9c.execute-api.us-east-1.amazonaws.com/dev"
 }
